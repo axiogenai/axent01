@@ -2120,7 +2120,7 @@ export const Workspace: React.FC<WorkspaceProps> = ({
 
       playSound('warning');
 
-      setRegValidationError('Candidate registration is mandatory. Enter your Name and USN to unlock the code compiler.');
+      setRegValidationError('Candidate registration is mandatory. Enter your Name and Email Address to unlock the code compiler.');
 
       setIsProfileModalOpen(true);
 
@@ -4060,7 +4060,7 @@ export const Workspace: React.FC<WorkspaceProps> = ({
 
             } else {
 
-              setRegValidationError('Candidate registration is mandatory to unlock the workstation. Please enter your Full Name and USN.');
+              setRegValidationError('Candidate registration is mandatory to unlock the workstation. Please enter your Full Name and Email Address.');
 
               playSound('warning');
 
@@ -4418,7 +4418,7 @@ export const Workspace: React.FC<WorkspaceProps> = ({
 
                     <label style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>
 
-                      USN / Roll Number *
+                      Email Address *
 
                     </label>
 
@@ -4426,13 +4426,13 @@ export const Workspace: React.FC<WorkspaceProps> = ({
 
                       type="text"
 
-                      placeholder="Enter USN / Roll Number"
+                      placeholder="candidate@domain.com"
 
                       value={student.rollNumber}
 
                       onChange={(e) => {
 
-                        setStudent({ ...student, rollNumber: e.target.value });
+                        setStudent({ ...student, rollNumber: e.target.value, email: e.target.value });
 
                         if (regValidationError) setRegValidationError(null);
 
@@ -4770,49 +4770,7 @@ export const Workspace: React.FC<WorkspaceProps> = ({
 
 
 
-                  <div style={{ minWidth: 0 }}>
-
-                    <label style={{ fontSize: '11px', color: 'var(--text-muted)', display: 'block', marginBottom: '4px', fontWeight: 600 }}>
-
-                      Department / Branch
-
-                    </label>
-
-                    <input
-
-                      type="text"
-
-                      placeholder="e.g. Computer Science & Eng"
-
-                      value={student.department}
-
-                      onChange={(e) => setStudent({ ...student, department: e.target.value })}
-
-                      style={{
-
-                        width: '100%',
-
-                        boxSizing: 'border-box',
-
-                        background: 'var(--bg-elevated)',
-
-                        border: '1px solid var(--border)',
-
-                        borderRadius: 'var(--radius-sm)',
-
-                        padding: '8px 12px',
-
-                        color: 'var(--text-primary)',
-
-                        fontSize: '12px',
-
-                        outline: 'none'
-
-                      }}
-
-                    />
-
-                  </div>
+                  
 
 
 
@@ -4974,7 +4932,7 @@ export const Workspace: React.FC<WorkspaceProps> = ({
 
                         if (!trimmedName || !trimmedRoll) {
 
-                          setRegValidationError('Candidate Full Name and USN / Roll Number are mandatory to unlock.');
+                          setRegValidationError('Candidate Full Name and Email Address are mandatory to unlock.');
 
                           playSound('warning');
 

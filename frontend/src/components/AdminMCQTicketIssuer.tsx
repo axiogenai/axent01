@@ -432,7 +432,7 @@ export const AdminMCQTicketIssuer: React.FC = () => {
   };
 
   const handleDownloadTemplate = () => {
-    const headers = ['Full Name', 'Roll Number', 'Department', 'Semester', 'Division'];
+    const headers = ['Full Name', 'Email'];
     const sampleRows = [
       ['Aarav Sharma', '21CS001', 'CSE', '4th Sem', 'A'],
       ['Ananya Rao', '21CS002', 'CSE', '4th Sem', 'A'],
@@ -1084,7 +1084,7 @@ export const AdminMCQTicketIssuer: React.FC = () => {
                     rows={6}
                     value={pasteText}
                     onChange={(e) => setPasteText(e.target.value)}
-                    placeholder={`Full Name, Roll Number, Department, Semester, Division\nAarav Sharma, 21CS001, CSE, 4th Sem, A\nAnanya Rao, 21CS002, CSE, 4th Sem, B`}
+                    placeholder={`Full Name, Email\nAarav Sharma, aarav@college.edu\nAnanya Rao, ananya@college.edu`}
                     className="w-full p-3 rounded-xl border border-[var(--border)] bg-[var(--bg-main)] text-xs font-mono text-[var(--text-primary)] focus:outline-none focus:border-[var(--text-primary)] transition-colors resize-y leading-relaxed"
                   />
                 </div>
@@ -1335,49 +1335,15 @@ export const AdminMCQTicketIssuer: React.FC = () => {
 
                 <div>
                   <label className="block text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-1.5">
-                    Roll Number / USN
+                    Candidate Email Address
                   </label>
                   <input
+                    type="email"
                     required
                     value={roll}
                     onChange={(e) => setRoll(e.target.value)}
-                    placeholder="e.g. 21CS042"
+                    placeholder="e.g. candidate@domain.com"
                     autoComplete="off"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg-main)] text-sm font-mono text-[var(--text-primary)] focus:outline-none focus:border-[var(--text-primary)]"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div>
-                  <label className="block text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-1.5">
-                    Department
-                  </label>
-                  <input
-                    value={department}
-                    onChange={(e) => setDepartment(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg-main)] text-sm text-[var(--text-primary)] focus:outline-none focus:border-[var(--text-primary)]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-1.5">
-                    Semester
-                  </label>
-                  <input
-                    value={semester}
-                    onChange={(e) => setSemester(e.target.value)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg-main)] text-sm text-[var(--text-primary)] focus:outline-none focus:border-[var(--text-primary)]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-bold text-[var(--text-secondary)] uppercase tracking-wider mb-1.5">
-                    Division
-                  </label>
-                  <input
-                    value={division}
-                    onChange={(e) => setDivision(e.target.value)}
                     className="w-full px-3.5 py-2.5 rounded-xl border border-[var(--border)] bg-[var(--bg-main)] text-sm text-[var(--text-primary)] focus:outline-none focus:border-[var(--text-primary)]"
                   />
                 </div>

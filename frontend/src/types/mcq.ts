@@ -101,9 +101,10 @@ export interface MCQAttempt {
   examId: string;
   examTitle: string;
   studentName: string;
+  studentEmail?: string;
   studentRoll: string;
-  studentDept: string;
-  studentSem: string;
+  studentDept?: string;
+  studentSem?: string;
   studentDiv?: string;
   startTime: number;           // Epoch ms
   deadline: number;            // Epoch ms (startTime + durationMs)

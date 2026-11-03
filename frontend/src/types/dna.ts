@@ -29,11 +29,12 @@ export type AiToolDetected =
 
 export interface StudentInfo {
   name: string;
-  rollNumber: string; // USN / Roll No / Hall Ticket
+  email?: string; // Student Email Address
+  rollNumber: string; // USN / Roll No / Hall Ticket (defaults to email or ID)
   course: string; // Subject / Lab Name
-  department: string; // Branch / Dept (e.g. CSE, IT, ECE)
-  semester: string; // Semester (e.g. Sem 3, Sem 5)
-  division?: string; // Section / Division (e.g. Div A, Div B)
+  department?: string; // Branch / Dept (optional)
+  semester?: string; // Semester (optional)
+  division?: string; // Section / Division (optional)
   examType: ExamCategory;
   assignmentTitle: string; // Problem Statement / Question
   labId?: string; // e.g. "LAB-01"
